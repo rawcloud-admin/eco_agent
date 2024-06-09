@@ -1,0 +1,11 @@
+[Unit]
+Description=ECO Agent
+
+[Service]
+Type=simple
+ExecStart=/root/eco_agent/exec -w/root/eco_agent/LOG -isleep.raw-cloud.com -p41122 -D
+ExecStop=/root/eco_agent/stop
+
+[Install]
+WantedBy=multi-user.target
+

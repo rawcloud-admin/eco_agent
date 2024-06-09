@@ -1,0 +1,4 @@
+#!/bin/bash
+
+g++ main.cpp proc_parser.cpp log.cpp system.cpp -pthread -static-libgcc -static-libstdc++ -Wl,-Bstatic -lcrypto -ldl -o exec
+

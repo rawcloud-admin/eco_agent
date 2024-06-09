@@ -1,0 +1,4 @@
+#!/bin/bash
+
+kill -9 `cat /root/raw_cloud_agent/LOG/pid.file`
+

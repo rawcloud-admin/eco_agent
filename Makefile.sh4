@@ -1,0 +1,12 @@
+all: systat release
+
+systat: main.cpp proc_parser.cpp log.cpp
+	mkdir systat ;\
+	/opt/mcp/toolchains/froot61_ia32/opt/mcp/bin/sh4-mcp61-g++ main.cpp proc_parser.cpp log.cpp system.cpp -pthread -o systat/systat
+
+date=$(shell date +"%m_%d_%y_%H_%M")
+release: systat
+	tar -zcvf systat.tar.gz systat
+
+clean:
+	rm -rf systat* *.o mem_parser
